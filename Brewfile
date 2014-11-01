@@ -5,6 +5,7 @@ upgrade
 install ruby-build
 install rbenv
 install ack
+install python
 install ctags
 install git
 install mercurial
