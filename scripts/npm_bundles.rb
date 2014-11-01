@@ -6,11 +6,7 @@ npms = {
   # module name => module command
   # leave command blank if they are the same
   "serve" => "",
-  "distra" => "",
   "gh" => "",
-  "pulldown" => "",
-  "coffee-script" => "coffee",
-  "grunt-cli" => "grunt",
   "express" => "",
   "nodemon" => "",
   "mocha" => "",

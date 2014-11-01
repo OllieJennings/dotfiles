@@ -55,12 +55,8 @@ alias nr="npm run"
 alias nt="npm test"
 
 # jekyll
-alias js="jekyll --server"
-
-# vagrant
-alias vup="vagrant up"
-alias vhalt="vagrant halt"
-alias vssh="vagrant ssh"
+alias js="jekyll serve"
+alias jsw="jekyll serve --watch"
 
 # dotfiles
 alias df="cd ~/dotfiles"

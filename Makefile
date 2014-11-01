@@ -1,6 +1,6 @@
-DIR=/Users/jackfranklin/dotfiles
+DIR=/Users/olliejennings/dotfiles
 
-all: symlinks ensure_brew brew ruby_env gems node clone_vundle
+all: symlinks ensure_brew brew gems node clone_vundle
 	@echo "Reminder: Vim plugins are managed within Vim with Vundle."
 
 symlinks:
@@ -23,9 +23,6 @@ ensure_brew:
 
 clone_vundle: symlinks
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-ruby_env:
-	ruby $(DIR)/scripts/ruby_env.rb
 
 gems:
 	ruby $(DIR)/scripts/gems.rb

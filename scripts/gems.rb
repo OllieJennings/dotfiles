@@ -8,6 +8,11 @@ gems = %w{
   shotgun
   travis
   tmuxinator
+  sass
+  cocoapods
+  bourbon
+  neat
+  bitters
 }
 
 gems.each do |gem|

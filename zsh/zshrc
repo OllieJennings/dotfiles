@@ -44,13 +44,13 @@ stty -ixon
 # better cding
 # http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
-cdpath=($HOME/git $HOME/Dropbox $HOME/git/fyp $HOME/Dropbox/Sites)
+cdpath=($HOME/Code)
 
-export NVM_DIR="/Users/jackfranklin/.nvm"
+export NVM_DIR="/Users/olliejennings/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # added by travis gem
-[ -f /Users/jackfranklin/.travis/travis.sh ] && source /Users/jackfranklin/.travis/travis.sh
+[ -f /Users/olliejennings/.travis/travis.sh ] && source /Users/olliejennings/.travis/travis.sh
 
 # this has to be done after rbenv is inited
 export PATH="./.bundle/binstubs:$PATH"
