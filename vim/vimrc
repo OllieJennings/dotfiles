@@ -13,6 +13,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/html5.vim'
 " haml also does Sass and SCSS
 Plugin 'tpope/vim-haml'
