@@ -63,3 +63,7 @@ alias tat="new-tmux-from-dir-name"
 
 # highlight pasting
 alias jshigh="pbpaste | highlight --syntax=js -O rtf | pbcopy"
+
+# python
+alias python='python3'
+alias pip='pip3'
