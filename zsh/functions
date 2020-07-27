@@ -8,6 +8,10 @@ cd () {
 
 function ck { command mkdir $1 && cd $1 }
 
+function tj {
+  tmux attach-session -t `tmux list-sessions | sed -E 's/:.*$//' | fzf`
+}
+
 function g {
   if [[ $# > 0 ]]; then
     git $@
@@ -71,14 +75,16 @@ function mkv-to-mp4 {
   ffmpeg -i $1 -c:v copy -c:a copy $2
 }
 
-function rbenv_prompt_info() {
-  local ruby_version
-  ruby_version=$(rbenv version 2> /dev/null) || return
-  echo "‹$ruby_version" | sed 's/[ \t].*$/›/'
-}
-
 function nvm_prompt_info() {
   local node_version
   node_version=$(nvm current 2> /dev/null) || return
   echo "‹$node_version›"
+}
+
+function js-highlight() {
+  highlight -O rtf $1 --line-numbers -W -j 3 --font-size 40 --font Monaco -W --syntax js | pbcopy
+}
+
+youtube-audio() {
+  youtube-dl --extract-audio --audio-format mp3 --pref-ffmpeg $1
 }

@@ -1,0 +1,19 @@
+{
+  "prettier.requireConfig": true,
+  "prettier.onlyUseLocalVersion": true,
+  "suggest.maxCompleteItemCount": 10,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "markdown"
+  ],
+  "coc.preferences.formatOnType": false,
+  "eslint.run": "onSave",
+  "tsserver.formatOnType": false,
+  "coc.preferences.formatOnInsertLeave": false,
+  "suggest.disableKind": true,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
+  "snippets.extends": {
+    "typescript": ["javascript"]
+  }
+}

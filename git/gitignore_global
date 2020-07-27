@@ -2,7 +2,6 @@
 .DS_Store
 tags
 .tags
-_projectnotes.txt
 node_modules/
 .tern-port
 *.class
@@ -11,3 +10,5 @@ npm-debug.log
 _site/
 .sass-cache/
 .bundle/
+.env
+.lvimrc

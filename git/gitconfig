@@ -1,8 +1,9 @@
 [user]
-	name = Ollie Jennings
-	email = ollie@olliejennings.co.uk
+  name = Ollie Jennings
+  email = ollie@olliejennings.co.uk
 [diff]
-	tool = vimdiff
+  tool = vimdiff
+  compactionHeuristic = true
 [alias]
   st = status
   ci = commit -v
@@ -11,14 +12,15 @@
   amend = commit --amend
   aa = add --all
   fa = fetch --all
-  pom = push origin master
   b = branch
+[pull]
+  rebase = true
 [push]
-	default = simple
+  default = simple
 [color]
-	ui = true
+  ui = true
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [core]
-	excludesfile = /Users/olliejennings/.gitignore_global
-	pager = less -r
+  excludesfile = ~/.gitignore_global
+  editor = nvim -u $HOME/.config/nvim/git-init.vim

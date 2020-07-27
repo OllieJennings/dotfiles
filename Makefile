@@ -1,41 +1,36 @@
-DIR=/Users/olliejennings/dotfiles
+DIR="${HOME}/dotfiles"
 
-all: symlinks ensure_brew brew gems node clone_vundle
-	@echo "Reminder: Vim plugins are managed within Vim with Vundle."
+.PHONY: tmux neovim git nvm zsh brew
 
-symlinks:
+all:
+	@echo "Run things individually!"
+
+neovim:
+	@ln -nsf $(DIR)/nvim ~/.config/nvim
+
+tmux:
+	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
+	@ln -sf $(DIR)/tmux/tmux-osx.conf ~/.tmux-osx.conf
+
+git:
+	@ln -sf $(DIR)/git/gitconfig ~/.gitconfig
+	@ln -sf $(DIR)/git/gitignore_global ~/.gitignore_global
+
+zsh:
 	@ln -nsf $(DIR)/zsh/zsh ~/.zsh
 	@ln -sf $(DIR)/zsh/zshenv ~/.zshenv
 	@ln -sf $(DIR)/zsh/zshrc ~/.zshrc
-	@ln -nsf $(DIR)/vim/vim ~/.vim
-	@ln -sf $(DIR)/vim/vimrc ~/.vimrc
-	@ln -nsf $(DIR)/vim/plugin ~/.vim/plugin
-	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
-	@ln -sf $(DIR)/git/gitconfig ~/.gitconfig
-	@ln -sf $(DIR)/git/gitignore_global ~/.gitignore_global
-	@ln -sf $(DIR)/ctags/ctags ~/.ctags
-	@ln -sf $(DIR)/gem/gemrc ~/.gemrc
-	@ln -sf $(DIR)/task/taskrc ~/.taskrc
-	@ln -nsf $(DIR)/bundle ~/.bundle
-
-ensure_brew:
-	ruby $(DIR)/scripts/ensure_homebrew.rb
-
-clone_vundle: symlinks
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-gems:
-	ruby $(DIR)/scripts/gems.rb
-
-brew: Brewfile
-	brew bundle Brewfile
 
 nvm:
-	curl https://raw.githubusercontent.com/creationix/nvm/v0.8.0/install.sh | sh
-	source ~/.nvm/nvm.sh && nvm install 0.10
-	source ~/.nvm/nvm.sh && nvm install 0.8
-	source ~/.nvm/nvm.sh && nvm alias default 0.10
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+	source ~/.nvm/nvm.sh && nvm install v14.6.0
+	source ~/.nvm/nvm.sh && nvm alias default v14.6.0
 
-node: nvm
-	ruby $(DIR)/scripts/npm_bundles.rb
+bin:
+	@ln -sf $(DIR)/bin ~/.bin
 
+antigen:
+	cd ~ && curl -L git.io/antigen > antigen.zsh
+	
+brew:
+	$(DIR)/brew/brew.sh

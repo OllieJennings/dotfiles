@@ -1,8 +1,9 @@
 # lazy
-alias v="vim"
+alias v="nvim"
 alias vi="echo use v!!"
 alias f="fg"
 alias l="ls"
+alias ..="builtin cd .."
 
 # misc
 alias slrn="slrn -n"
@@ -12,8 +13,6 @@ alias ls="ls -G"
 
 # bundle and ruby rails stuff
 alias be="bundle exec"
-alias bi="bundle install"
-alias rk="rake"
 
 # git alises
 alias ga="git add"
@@ -22,10 +21,10 @@ alias gap="git add -p"
 alias gci="git ci"
 alias gcm="git ci -m"
 alias gco="git co"
+alias gcom="git co master"
 alias gcob="git co -b"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias ghp="git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master"
 alias gl="git log --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
 alias gpo="git pull origin"
 alias gpom="git pom"
@@ -33,30 +32,25 @@ alias gpu="git push"
 alias grm="git rm"
 alias grh="git reset HEAD"
 alias gum="gco master && gpo"
-alias gpuhe="git push heroku master"
 alias gput="git push --tags"
-alias gpuh="gpu && gput && gpuhe"
 alias gpl="git pull"
 alias gt="git tag"
 alias gnrt="git-new-remote-tracking"
 alias hpr="hub pull-request"
 alias hb="hub browse"
-alias gmbic="git-merge-branch-into-current"
-alias gmi="git-merge-into"
+alias hc="hub compare"
+alias gcb="git fetch -a -p && git branch -vv | grep -w 'gone]' | xargs git branch -d"
 
 # npm
 alias n="node"
 alias ni="npm install"
 alias nis="npm install --save"
-alias nisd="npm install --save-dev"
+alias nisd="npm install -D"
 alias nig="npm install -g"
 alias nl="npm link"
 alias nr="npm run"
 alias nt="npm test"
-
-# jekyll
-alias js="jekyll serve"
-alias jsw="jekyll serve --watch"
+alias no="npm outdated"
 
 # dotfiles
 alias df="cd ~/dotfiles"
@@ -65,15 +59,7 @@ alias srcz="source ~/.zshrc"
 # tmux
 alias tls="tmux ls"
 alias td="tmux detach"
-alias tnew="new-tmux-from-dir-name"
-alias tatt="tmux attach-session -t "
+alias tat="new-tmux-from-dir-name"
 
-# rails
-alias rup="(bundle check || bundle install) && rake db:migrate db:test:prepare"
-alias springstub="bundle exec spring binstub --all"
-
-
-
-# thanks to @phuunet for this one
-# https://twitter.com/phuunet/status/339318973634052096
-alias topcmds='cat ~/.zhistory | cut -d ";" -f 2 | sed "s, .*,," | sort | uniq -c | sort -n | tail -rn 30'
+# highlight pasting
+alias jshigh="pbpaste | highlight --syntax=js -O rtf | pbcopy"
