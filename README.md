@@ -25,7 +25,7 @@ Files are symlinked into the proper location, and have the `.` added. For exampl
 * Clone this repo into `~/dotfiles`
 * Setup Vim
   * `make neovim`
-  * `make vimplug`
+  * Install [Vim Plug](https://github.com/junegunn/vim-plug)
   * Run NVim + Plug install
 * Setup `zsh`
   * `make zsh`
